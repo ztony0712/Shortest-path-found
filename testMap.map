@@ -1,0 +1,24 @@
+<bounding minLat=53.801600 minLon=-1.564000 maxLat=53.811000 maxLon=-1.543100 /bounding>
+<link id=0 node=0 node=1 way=0 length=4 ;/link>
+<link id=0 node=0 node=7 way=0 length=8 ;/link>
+<link id=0 node=1 node=7 way=0 length=3 ;/link>
+<link id=0 node=1 node=2 way=0 length=8 ;/link>
+<link id=0 node=2 node=8 way=0 length=2 ;/link>
+<link id=0 node=2 node=3 way=0 length=7 ;/link>
+<link id=0 node=2 node=5 way=0 length=4 ;/link>
+<link id=0 node=3 node=5 way=0 length=14 ;/link>
+<link id=0 node=3 node=4 way=0 length=9 ;/link>
+<link id=0 node=4 node=5 way=0 length=10 ;/link>
+<link id=0 node=5 node=6 way=0 length=2 ;/link>
+<link id=0 node=6 node=7 way=0 length=6 ;/link>
+<link id=0 node=6 node=8 way=0 length=6 ;/link>
+<link id=0 node=7 node=8 way=0 length=1 ;/link>
+<node id=0 lat=0 lon=0 /node>
+<node id=1 lat=1 lon=1 /node>
+<node id=2 lat=2 lon=2 /node>
+<node id=3 lat=3 lon=3 /node>
+<node id=4 lat=4 lon=4 /node>
+<node id=5 lat=5 lon=5 /node>
+<node id=6 lat=6 lon=6 /node>
+<node id=7 lat=7 lon=7 /node>
+<node id=8 lat=8 lon=8 /node>
