@@ -7,17 +7,17 @@ Node *graph[4000];
 int main(int argc, char const *argv[])
 {
     FILE *file;
-    file = fopen("testMap.map", "r");
+    file = fopen("Final_Map.map", "r");
     if (load_map(file) == 1)
         puts("No map file!");
     else
         puts("Map loaded.");
 
-    file = fopen("nodes.txt", "w");
-    if (load_map(file) == 1)
+    file = fopen("map_nodes.txt", "w+");
+    if (store_map(file) == 1)
         puts("No map file!");
     else
-        puts("Map loaded.");
+        puts("Map stored.");
 
     return 0;
 }

@@ -9,8 +9,8 @@ int load_map(FILE *file) {
     memset(graph, 0, sizeof(Node));
     char line[200];
     int i = 0;
-    if (file == NULL) 
-        return 1;   
+    if (file == NULL)
+        return 1;
 
     rewind(file);
     // read all nodes in graph array
@@ -39,8 +39,10 @@ int load_map(FILE *file) {
                 
                 // find first node id in graph array
                 if (graph[i]->id == new_neighbor1->id) {
-                    // give distance to both new_neighbor nodes
+                    // give distance and coordinates to both new_neighbor nodes
                     new_neighbor1->dis = new_neighbor2->dis = dis;
+                    new_neighbor1->lat = graph[i]->lat;
+                    new_neighbor1->lon = graph[i]->lon;
                     // link second node to first node
                     if (graph[i]->near == NULL) {
                         graph[i]->near = new_neighbor2;
@@ -54,6 +56,8 @@ int load_map(FILE *file) {
                     // and link the first node to second node
                     for (int j = 0; graph[j]; ++j) {
                         if (graph[j]->id == new_neighbor2->id) {
+                            new_neighbor2->lat = graph[j]->lat;
+                            new_neighbor2->lon = graph[j]->lon;
                             if (graph[j]->near == NULL) {
                                 graph[j]->near = new_neighbor1;
                             } else {
@@ -70,15 +74,33 @@ int load_map(FILE *file) {
         }
     }
 
-    for (int i = 0; graph[i] != NULL; ++i) {
+    // for (int i = 0; graph[i] != NULL; ++i) {
 
-        printf("%ld\n", graph[i]->id);
-    }
+    //     printf("%ld ", graph[i]->id);
+    //     printf("%lf ", graph[i]->lat);
+    //     printf("%lf\n", graph[i]->lon);
+    // }
 
     return 0;
 }
 
 int store_map(FILE *file) {
-    
-    return 1;
+    if (file == NULL) 
+        return 1;
+
+    rewind(file);
+    // store nodes in file
+    for (int i = 0; graph[i] != NULL; ++i) {
+        if (graph[i]->near != NULL) {
+            Neighbor *current = graph[i]->near;
+            for (; current != NULL; current = current->next) {
+                fprintf(file, "%lf %lf\n", graph[i]->lon, graph[i]->lat);
+                fprintf(file, "%lf %lf\n\n", current->lon, current->lat);
+            }
+        }
+        
+    }
+
+
+    return 0;
 }
