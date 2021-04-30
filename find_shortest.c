@@ -23,7 +23,6 @@ int find_shortest(long int begin, long int end) {
                 Neighbor *current = graph[i]->near;
                 for (; current != NULL; current = current->next) {
                     Node *target = graph[current->index];
-                    // compare double numbers
                     if (graph[i]->tot_dis == INF) {
                         graph[i]->tot_dis = 0;
                     }
@@ -36,8 +35,7 @@ int find_shortest(long int begin, long int end) {
                 }
                 
                 // the node would be marked as "visited"
-                // to indicate that all the neighbor nodes have
-                // been checked
+                // if it is the closest node to the source node
                 
                 for (int j = 0; graph[j] != NULL; ++j) {
                     if (graph[j]->visited == false) {
@@ -52,7 +50,7 @@ int find_shortest(long int begin, long int end) {
                 min = INF;
                 graph[next_ture]->visited = true;
                 
-
+                // this node would be next source node
                 i=next_ture;
             }
             break;
