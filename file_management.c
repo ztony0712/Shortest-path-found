@@ -1,3 +1,4 @@
+#include "interface.h"
 #include "file_management.h"
 
 extern Node *graph[4000];
@@ -43,9 +44,9 @@ int load_map(FILE *file) {
                     new_neighbor1->dis = new_neighbor2->dis = dis;
                     new_neighbor1->index = i;
                     // link second node to first node
-                    if (graph[i]->near == NULL) {
+                    if (graph[i]->near == NULL)
                         graph[i]->near = new_neighbor2;
-                    } else {
+                    else {
                         Neighbor *current = graph[i]->near;
                         for (; current->next != NULL; current = current->next);
                         current->next = new_neighbor2;
@@ -56,9 +57,9 @@ int load_map(FILE *file) {
                     for (int j = 0; graph[j]; ++j) {
                         if (graph[j]->id == new_neighbor2->id) {
                             new_neighbor2->index = j;
-                            if (graph[j]->near == NULL) {
+                            if (graph[j]->near == NULL)
                                 graph[j]->near = new_neighbor1;
-                            } else {
+                            else {
                                 Neighbor *current = graph[j]->near;
                                 for (; current->next != NULL; current = current->next);
                                 current->next = new_neighbor1;

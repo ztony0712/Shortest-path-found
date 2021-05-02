@@ -1,9 +1,10 @@
 #ifndef INTERFACE__H 
 #define INTERFACE__H
 
-// an interface to hint users
-// users could input two nodes that they
-// want to find the shortest path between
+#include <stdlib.h>
+#include <stdio.h>
+
+// start interface/load/store/calculate/free
 void start_interface(void);
 
 #endif

@@ -1,6 +1,7 @@
+#include "interface.h"
 #include "find_shortest.h"
 #include "file_management.h"
-#include <math.h>
+
 
 extern Node *graph[4000];
 
@@ -23,9 +24,9 @@ int find_shortest(long int begin, long int end) {
                 Neighbor *current = graph[i]->near;
                 for (; current != NULL; current = current->next) {
                     Node *target = graph[current->index];
-                    if (graph[i]->tot_dis == INF) {
+                    if (graph[i]->tot_dis == INF)
                         graph[i]->tot_dis = 0;
-                    }
+                    // find node which is closest to the begin node in neighborhood
                     if (current->dis+graph[i]->tot_dis < target->tot_dis && target->visited == false && fabs(current->dis+graph[i]->tot_dis - target->tot_dis) > tolerance) {
                         
                         target->tot_dis = current->dis+graph[i]->tot_dis;
@@ -38,14 +39,11 @@ int find_shortest(long int begin, long int end) {
                 // if it is the closest node to the source node
                 
                 for (int j = 0; graph[j] != NULL; ++j) {
-                    if (graph[j]->visited == false) {
+                    if (graph[j]->visited == false)
                         if (graph[j]->tot_dis < min) {
                             min = graph[j]->tot_dis;
                             next_ture = j;
-                        }
-                        
-                    }
-                    
+                        }                    
                 }
                 min = INF;
                 graph[next_ture]->visited = true;
@@ -57,6 +55,7 @@ int find_shortest(long int begin, long int end) {
         }
     }
 
+    // write shortest path into a txt file
     FILE *file;
     file = fopen("shortest.txt", "w+");
     if (file == NULL)
@@ -71,9 +70,6 @@ int find_shortest(long int begin, long int end) {
                         fprintf(file, "%lf %lf\n\n", graph[i]->lon, graph[i]->lat);
                     else
                         break;
-                    
-                    
-
                 }
                 result = 0;
                 break;
