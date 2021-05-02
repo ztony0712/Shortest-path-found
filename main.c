@@ -36,5 +36,11 @@ int main(int argc, char const *argv[])
     else
         printf("Shortest path found.\n");
 
+    // free the Adjacency table
+    for (int i = 0; graph[i] != NULL; ++i)
+        if (graph[i]->near != NULL)
+            for (Neighbor *current = graph[i]->near; current != NULL; current = current->next)
+                free(current);
+
     return 0;
 }
