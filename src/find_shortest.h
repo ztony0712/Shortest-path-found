@@ -12,6 +12,7 @@
 // node with path length between begin node and
 // current node
 int find_shortest(long int begin, long int end);
+int store_shortest(FILE *file, long int end);
 
 
 #endif

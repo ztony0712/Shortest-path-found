@@ -2,17 +2,12 @@
 #include "file_management.h"
 
 extern Node *graph[4000];
+static char line[200];
 
-int load_map(FILE *file) {
-    memset(graph, 0, sizeof(Node));
-    char line[200];
-    int i = 0;
-    if (file == NULL)
-        return 1;
-
+static void read_nodes(FILE *file){
     rewind(file);
     // read all nodes in graph array
-    while(fgets(line, 200, file) != NULL) {
+    for(int i = 0; fgets(line, 200, file) != NULL; ) {
 
         if (strstr(line, "lon")) {
             graph[i] = (Node*) malloc(sizeof(Node));
@@ -21,9 +16,12 @@ int load_map(FILE *file) {
             graph[i]->tot_dis = INF;
 
             sscanf(line, "%*[^=]=%ld %*[^=]=%lf %*[^=]=%lf", &graph[i]->id, &graph[i]->lat, &graph[i]->lon);
-            i++;
+            ++i;
         }
     }
+}
+
+static void read_links(FILE *file){
     rewind(file);
     // read all links and connect them to relevant nodes
     while(fgets(line, 200, file) != NULL) {
@@ -73,7 +71,19 @@ int load_map(FILE *file) {
             }
         }
     }
+}
 
+int load_map(FILE *file) {
+    int result = 1;
+    memset(graph, 0, sizeof(Node));
+    
+    if (file == NULL)
+        result = 1;
+    else {
+        read_nodes(file);
+        read_links(file);
+        result = 0;
+    }
     // for (int i = 0; graph[i] != NULL; ++i) {
 
     //     printf("%ld ", graph[i]->id);
@@ -81,26 +91,30 @@ int load_map(FILE *file) {
     //     printf("%lf\n", graph[i]->lon);
     // }
 
-    return 0;
+    return result;
 }
 
 int store_map(FILE *file) {
+    int result = 1;
     if (file == NULL) 
-        return 1;
-
-    rewind(file);
-    // store nodes in file
-    for (int i = 0; graph[i] != NULL; ++i) {
-        if (graph[i]->near != NULL) {
-            Neighbor *current = graph[i]->near;
-            for (; current != NULL; current = current->next) {
-                fprintf(file, "%lf %lf\n", graph[i]->lon, graph[i]->lat);
-                fprintf(file, "%lf %lf\n\n", graph[current->index]->lon, graph[current->index]->lat);
-            }
-        }
+        result = 1;
+    else{
         
+        rewind(file);
+        // store nodes in file
+        for (int i = 0; graph[i] != NULL; ++i) {
+            if (graph[i]->near != NULL) {
+                Neighbor *current = graph[i]->near;
+                for (; current != NULL; current = current->next) {
+                    fprintf(file, "%lf %lf\n", graph[i]->lon, graph[i]->lat);
+                    fprintf(file, "%lf %lf\n\n", graph[current->index]->lon, graph[current->index]->lat);
+                }
+            }
+            
+        }
+        result = 0;
     }
 
 
-    return 0;
+    return result;
 }

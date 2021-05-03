@@ -4,10 +4,8 @@
 
 Node *graph[4000];
 
-void start_interface(void) {
-    long int begin, end;
+static void load_store(){
     FILE *file;
-
     /* load and store */
     // load data from map file
     file = fopen("../data/Final_Map.map", "r");
@@ -21,7 +19,11 @@ void start_interface(void) {
         puts("No map file!");
     else
         puts("Map stored.");
+}
 
+static void find_store (){
+    FILE *file;
+    long int begin, end;
     /* calculate the shortest path */
     // get a begin and an end node from users
     printf("input the id of begin node: ");
@@ -30,17 +32,33 @@ void start_interface(void) {
     printf("input the id of end node: ");
     scanf("%ld", &end);
     // find the shortest path between
-    // and store them into another txt file
     if (find_shortest(begin, end) == 1)
         printf("No path found!\n");
     else
         printf("Shortest path found.\n");
+    
+    
+    // and store them into another txt file
+    file = fopen("../data/shortest.txt", "w+");
+    if (store_shortest(file, end) == 1)
+        puts("No file to store path!");
+    else
+        puts("Shortest path stored.");
+}
 
+static void free_all() {
     /* free */
     // free the Adjacency table
     for (int i = 0; graph[i] != NULL; ++i)
         if (graph[i]->near != NULL)
             for (Neighbor *current = graph[i]->near; current != NULL; current = current->next)
                 free(current);
+}
+
+void start_interface(void) {
+    load_store();
+    find_store();
+    free_all();
+    return;
 }
 

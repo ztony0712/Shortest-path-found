@@ -6,7 +6,7 @@
 extern Node *graph[4000];
 
 
-int find_shortest(long int begin, long int end) {
+int find_shortest(long int begin, const long int end) {
     double tolerance = 0.000001;
     int result = 1, min = INF, next_ture = -1;
 
@@ -51,13 +51,17 @@ int find_shortest(long int begin, long int end) {
                 // this node would be next source node
                 i=next_ture;
             }
+            result = 0;
             break;
         }
     }
 
+    return result;
+}
+
+int store_shortest (FILE *file, const long int end) {
+    int result = 1;
     // write shortest path into a txt file
-    FILE *file;
-    file = fopen("../data/shortest.txt", "w+");
     if (file == NULL)
         result = 1;
     else {
@@ -76,6 +80,5 @@ int find_shortest(long int begin, long int end) {
             }
         }
     }
-
     return result;
 }
