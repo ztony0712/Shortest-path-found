@@ -38,7 +38,7 @@ Attention❗️Firtstly, use 'brew intall gnuplot' to get drawing environment❗
 ### Directory Construction Description
 
 * README.md  
-* CMakeLists.txt  
+* draw.plt 
 * src  
 > main.c  
 > interface.c  
@@ -64,3 +64,4 @@ Attention❗️Firtstly, use 'brew intall gnuplot' to get drawing environment❗
 * Find my project in my github: https://github.com/ztony0712/pp-cw2
 * Screenshot
 
+![screenshot](img/screenshot.png)
