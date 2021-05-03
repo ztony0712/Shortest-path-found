@@ -4,7 +4,7 @@
 
 Welcome to Dijkstras shortest path program. This is the cw2 of Programming Project, which could find the shortest path between 2 points on a map of university of Leeds. You can see the map graph with shortest path highlighted on gnuplot using this program. To run it, check the following instruction and have fun!
 
-![demo](/Users/macbookpro/Desktop/path/img/demo.png)
+![demo](img/demo.png)
 
 ### Environment Dependencies
 
