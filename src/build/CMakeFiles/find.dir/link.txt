@@ -1,1 +1,0 @@
-/usr/bin/cc -std=c99 -fdump-rtl-expand -g   CMakeFiles/find.dir/main.c.o CMakeFiles/find.dir/file_management.c.o CMakeFiles/find.dir/find_shortest.c.o CMakeFiles/find.dir/interface.c.o  -o find 
