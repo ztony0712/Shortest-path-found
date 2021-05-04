@@ -6,9 +6,27 @@
 extern Node *graph[4000];
 
 
-int find_shortest(long int begin, const long int end) {
+int find_shortest(const long int begin, const long int end) {
     double tolerance = 0.000001;
     int result = 1, min = INF, next_ture = -1;
+    int jud=0;
+
+    // begin node can't be same to end
+    if (begin == end)
+        return -1;
+
+    // begin and end are all should be exist
+    for (int i = 0; graph[i] != NULL; ++i)
+        if ((graph[i]->id == begin || graph[i]->id == end) && graph[i]->near != NULL)
+            jud++;
+
+    if (graph[0] == 0)
+        return 1;
+
+    if (jud != 2)
+        return -1;
+
+
 
     // calculate the shortest path between begin node and
     // every other nodes. Store the lenth of path and parent id
@@ -19,7 +37,7 @@ int find_shortest(long int begin, const long int end) {
             graph[i]->visited = true;
             graph[i]->tot_dis = 0;
             graph[i]->par_id = -1;
-            for (; graph[i]->id != end; ) {
+            while (graph[i]->id != end) {
                 // go through neighbor
                 Neighbor *current = graph[i]->near;
                 for (; current != NULL; current = current->next) {
@@ -62,7 +80,7 @@ int find_shortest(long int begin, const long int end) {
 int store_shortest (FILE *file, const long int end) {
     int result = 1;
     // write shortest path into a txt file
-    if (file == NULL)
+    if (graph[0] == NULL)
         result = 1;
     else {
         for (int i = 0; graph[i] != NULL; ++i) {
@@ -80,5 +98,6 @@ int store_shortest (FILE *file, const long int end) {
             }
         }
     }
+    fclose(file);
     return result;
 }

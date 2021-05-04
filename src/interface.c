@@ -16,12 +16,12 @@ static void load_store(){
     // store all nodes into a txt file
     file = fopen("../data/map_nodes.txt", "w+");
     if (store_map(file) == 1)
-        puts("No map file!");
+        puts("No graph data!");
     else
         puts("Map stored.");
 }
 
-static void find_store (){
+static void find_store(){
     FILE *file;
     long int begin, end;
     /* calculate the shortest path */
@@ -32,18 +32,23 @@ static void find_store (){
     printf("input the id of end node: ");
     scanf("%ld", &end);
     // find the shortest path between
-    if (find_shortest(begin, end) == 1)
-        printf("No path found!\n");
-    else
+    int result = find_shortest(begin, end);
+    if (result == 1)
+        printf("void file or graph!\n");
+    else if (result == -1)
+        printf("invalid begin or end node\n");
+    else {
         printf("Shortest path found.\n");
+        // and store them into another txt file
+        file = fopen("../data/shortest.txt", "w+");
+        if (store_shortest(file, end) == 1)
+            puts("No path data!");
+        else
+            puts("Shortest path stored.");
+    }
     
     
-    // and store them into another txt file
-    file = fopen("../data/shortest.txt", "w+");
-    if (store_shortest(file, end) == 1)
-        puts("No file to store path!");
-    else
-        puts("Shortest path stored.");
+    
 }
 
 static void free_all() {

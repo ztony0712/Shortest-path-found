@@ -21,8 +21,8 @@ Attention❗️Firtstly, use 'brew intall gnuplot' to get drawing environment❗
 > ##### Please ensure that you have installed required version of gcc, cmake and gnuplot.
 >
 > 1. Execute the following code by order in 'src' directory: mkdir build, cd build, cmake .., make
-> 2. Move 'data' folder into 'src' folder
 > 3. ./find to run the procedure.
+> 3. ./unit to run unit test.
 > 4. cd to directory containing 'draw.plt' and input 'load 'draw.plt''
 
 #### MacOS

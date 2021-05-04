@@ -1,0 +1,8 @@
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/build/CMakeFiles/install/strip.dir
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/build/CMakeFiles/install/local.dir
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/build/CMakeFiles/unit.dir
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/build/CMakeFiles/list_install_components.dir
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/build/CMakeFiles/find.dir
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/build/CMakeFiles/install.dir
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/build/CMakeFiles/edit_cache.dir
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/build/CMakeFiles/rebuild_cache.dir

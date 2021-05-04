@@ -84,6 +84,7 @@ int load_map(FILE *file) {
         read_links(file);
         result = 0;
     }
+    fclose(file);
     // for (int i = 0; graph[i] != NULL; ++i) {
 
     //     printf("%ld ", graph[i]->id);
@@ -96,7 +97,7 @@ int load_map(FILE *file) {
 
 int store_map(FILE *file) {
     int result = 1;
-    if (file == NULL) 
+    if (graph[0] == NULL) 
         result = 1;
     else{
         
@@ -114,7 +115,7 @@ int store_map(FILE *file) {
         }
         result = 0;
     }
-
+    fclose(file);
 
     return result;
 }

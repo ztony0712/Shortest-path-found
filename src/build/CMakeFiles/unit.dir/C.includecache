@@ -1,0 +1,102 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/file_management.c
+interface.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/interface.h
+file_management.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/file_management.h
+
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/file_management.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/find_shortest.c
+interface.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/interface.h
+find_shortest.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/find_shortest.h
+file_management.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/file_management.h
+
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/find_shortest.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+math.h
+-
+
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/interface.c
+interface.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/interface.h
+file_management.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/file_management.h
+find_shortest.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/find_shortest.h
+
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/interface.h
+stdlib.h
+-
+stdio.h
+-
+
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/unity/unit_tests.c
+unity.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/unity/unity.h
+../src/file_management.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/file_management.h
+../src/find_shortest.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/find_shortest.h
+../src/interface.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/src/interface.h
+
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/unity/unity.c
+unity.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/unity/unity.h
+stddef.h
+-
+avr/pgmspace.h
+-
+
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/unity/unity.h
+unity_internals.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/unity/unity_internals.h
+
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/unity/unity_internals.h
+unity_config.h
+/home/parallels/Desktop/Parallels Shared Folders/Home/Desktop/path/unity/unity_config.h
+setjmp.h
+-
+math.h
+-
+stddef.h
+-
+stdarg.h
+-
+stdint.h
+-
+limits.h
+-
+stdio.h
+-
+stdio.h
+-
+time.h
+-
+time.h
+-
+

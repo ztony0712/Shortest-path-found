@@ -1,0 +1,1 @@
+/usr/bin/cc -std=c99 -fdump-rtl-expand -g   CMakeFiles/unit.dir/home/parallels/Desktop/Parallels_Shared_Folders/Home/Desktop/path/unity/unit_tests.c.o CMakeFiles/unit.dir/home/parallels/Desktop/Parallels_Shared_Folders/Home/Desktop/path/unity/unity.c.o CMakeFiles/unit.dir/interface.c.o CMakeFiles/unit.dir/find_shortest.c.o CMakeFiles/unit.dir/file_management.c.o  -o unit 
