@@ -30,8 +30,8 @@ Attention❗️Firtstly, use 'brew intall gnuplot' to get drawing environment❗
 > ###### Please ensure that you have installed Xcode
 >
 > 1. Create a new C project
-> 2. Replace the main.c by all of the files in cw1
-> 3. Set the working directory to cw1
+> 2. Replace the main.c by all of the files (except 'unity' folder)
+> 3. Set the working directory to path/src/data
 > 4. Click 'run'
 > 5. cd to directory containing 'draw.plt' and input 'load 'draw.plt''
 
