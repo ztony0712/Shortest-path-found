@@ -106,9 +106,9 @@ int store_map(FILE *file) {
         for (int i = 0; graph[i] != NULL; ++i) {
             if (graph[i]->near != NULL) {
                 Neighbor *current = graph[i]->near;
-                for (; current != NULL; current = current->next) {
-                    fprintf(file, "%lf %lf\n", graph[i]->lon, graph[i]->lat);
-                    fprintf(file, "%lf %lf\n\n", graph[current->index]->lon, graph[current->index]->lat);
+                for (char id[30]; current != NULL; current = current->next) {
+                    fprintf(file, "%lf %lf \"%ld\"\n", graph[i]->lon, graph[i]->lat, graph[i]->id);
+                    fprintf(file, "%lf %lf \"%ld\"\n\n", graph[current->index]->lon, graph[current->index]->lat, graph[current->index]->id);
                 }
             }
             
