@@ -2,9 +2,7 @@
 
 ## V1.0.0 
 
-Welcome to Dijkstras shortest path program. This is the cw2 of Programming Project, which could find the shortest path between 2 points on a map of university of Leeds. You can see the map graph with shortest path highlighted on gnuplot using this program. To run it, check the following instruction and have fun!
-
-![demo](img/demo.png)
+A simple demo of Dijkstras shortest path. This code can find the shortest path between 2 points on a map. You can see the map graph with shortest path highlighted on gnuplot using this program. To run it, check the following instruction and have fun!
 
 ### Environment Dependencies
 
@@ -59,15 +57,3 @@ Attention❗️Firtstly, use 'brew intall gnuplot' to get drawing environment❗
 > unity.c  
 > unit_tests.c  
 
-* img  
-> screenshot.png  
-> example.png  
-
-
-
-### Github link
-
-* Find my project in my github: https://github.com/ztony0712/pp-cw2
-* Screenshot
-
-![screenshot](img/screenshot.png)
